@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link id='favicon' rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-png">
+    <title>Projects | Portfolio Jigar Sable</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none; border: none;
+  text-transform:capitalize;
+  transition: all .2s linear;
+}
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body{
+  background: #f7f7f7;
+  font-family: 'Poppins', sans-serif;
+}
+
+*::selection{
+  background: #2b3dda;
+  color: #fff;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar{
+  width: .8rem;
+}
+html::-webkit-scrollbar-track{
+  background: rgb(235, 202, 245);
+}
+html::-webkit-scrollbar-thumb{
+  background: #420177;
+}
+
+/* navbar starts */
+header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.7rem 10%;
+  height: 6.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146,161,176,.3);
+}
+section{
+  min-height: 100vh;
+  padding: 2rem 9%;
+}
+.heading{
+  font-size: 3.5rem;
+  color: rgb(32, 32, 32);
+  font-weight: 800;
+  text-align: center;
+}
+.heading span{
+  color: rgb(115, 3, 167);
+}
+header .logo{
+  font-size: 1.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #0E2431;
+}
+header .logo i {
+  font-size: 2.2rem;
+}
+header .logo:hover {
+  color: #fc8c05;
+}
+header .navbar ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .navbar li{
+  margin-left: 2.5rem;
+}
+header .navbar ul li a{
+  font-size: 1.57rem;
+  color: #0E2431;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.04rem;
+}
+header .navbar ul li a.active,
+header .navbar ul li a:hover{
+  color: #011aff;
+  border-bottom: .2rem solid #011aff;
+  padding: .5rem 0;
+}
+/* navbar ends */
+
+/* hamburger icon starts*/
+#menu{
+  font-size: 3rem;
+  cursor: pointer;
+  color: rgb(24, 2, 63);
+  display: none;
+}
+@media(max-width:768px){
+  #menu{
+      display: block;
+  }
+  header .navbar{
+    position: fixed;
+    top: 6.5rem; right: -120%;
+    width: 75%;
+    height: 100%;
+    text-align: left;
+    align-items: flex-start;
+    background-color: #0e0f31;
+  }
+  header .navbar ul{
+    flex-flow: column;
+    padding: 1rem;
+  }
+  header .navbar ul li{
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: .5rem;
+    width: 26rem;
+  }
+  header .navbar ul li a{
+    display: block;
+    padding: 1rem;
+    text-align: left;
+    color: #fff;
+    font-size: 2rem;
+  }
+  header .navbar ul li a.active,
+  header .navbar ul li a:hover{
+    padding: 1rem;
+    color: #fff;
+    border-radius: .5rem;
+    border-bottom: .5rem solid #011aff;
+  }
+  .fa-times{
+    transform: rotate(180deg);
+  }
+  header .navbar.nav-toggle{
+    right: 0;
+  }
+}
+/* hamburger icon ends */
+
+/* work section starts */
+.work{
+  /* background: #010124; */
+  background: linear-gradient(to bottom, #010136, #00003a);
+  margin-top: 5rem;
+}
+.work h2{
+  color: #fff;
+  padding: 1rem;
+}
+.work .heading span{
+  color: rgb(255, 230, 0);
+}
+.work .button-group{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1rem;
+  margin: 2rem auto;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.work .button-group .btn{
+  outline: none;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.work .button-group .btn:hover{
+  background-color: #fff;
+  color: #000;
+}
+.work .button-group .btn.is-checked{
+  background-color: #fff;
+  color: #000;
+}
+.work .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+  margin: 2rem;
+}
+.work .box-container .box{
+  flex:1 1 30rem;
+  border-radius: .5rem;
+  box-shadow: 0 .7rem 1rem rgba(0,0,0,.3);
+  position: relative;
+  overflow:hidden;
+  height:30rem;
+  background: #fff;
+  border: none;
+}
+.work .box-container .box img{
+  height: 100%;
+  width:100%;
+  object-fit: cover;
+}
+.work .box-container .box .content{
+  height: 100%;
+  width:100%;
+  position: absolute;
+  top:85%; left:0;
+  background:rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+}
+.work .box-container .box .content .tag{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.5rem;
+  width: 100%;
+  padding-left: 1rem;
+  background: #ffd900;
+}
+.work .box-container .box .content .tag h3{
+  font-size: 2rem;
+}
+.work .box-container .box:hover .content{
+  top: 25%;
+}
+.work .desc {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.work .desc p{
+  font-size: 1.5rem;
+}
+.work .desc .btns{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2rem;
+}
+.work .desc .btns .btn{
+  line-height: 0;
+  display: inline;
+  padding: 1.5rem 2.5rem;
+  border-radius: .5rem;
+  font-size: 1.5rem;
+  color: #fff;
+  background: rgb(12, 12, 12);
+  margin-right: 2rem;
+}
+.work .desc .btns .btn:hover{
+  background: #310ae0f5;
+}
+
+@media screen and (max-width: 450px) {
+  .work .button-group{
+    width: 100%;
+  }
+  .work .box-container{
+    margin: 0rem;
+  }
+  .work .box-container .grid-item .box{
+    width: 95% !important;
+  }
+}
+
+/* back to home button */
+.backbtn{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+.backbtn .btn {
+  position: relative;
+  line-height: 0;
+  padding: 1.6rem 3rem;
+  border-radius: .5em;
+  transition: 0.3s;
+  color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0px 2px 4px rgba(48, 68, 247, .3);
+  text-align: center;
+}
+.backbtn .btn span {
+  font-weight: 600;
+  font-size: 1.7rem;
+  font-family: 'Nunito', sans-serif;
+}
+.backbtn .btn i {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+.backbtn .btn:hover{
+  background: #ffffff;
+  color: #000;
+}
+.backbtn .btn:hover i {
+  transform: translateX(-8px);
+}
+/* work section ends */
+
+/* common media queries starts*/
+@media(max-width:450px){
+  html{
+    font-size: 55%;
+  }
+  body{
+    padding-right: 0;
+  }
+  section{
+    padding: 2rem;
+  }
+}
+/* common media queries ends*/
+
+
+/* scroll top starts */
+#scroll-top{
+  position: fixed;
+  top: -140%;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  background: #ffae00;
+  color: rgb(13, 0, 44);
+  border-radius: 5rem;
+  transition: 1s linear;
+  z-index: 1000;
+}
+#scroll-top.active{
+  top: calc(100% - 12rem);
+}
+/* scroll top ends */
+</style>
+<body oncontextmenu="return false">
+
+<!-- navbar starts -->
+<header>
+        <a href="/" class="logo"><i class="fab fa-node-js"></i> Jigar</a>
+
+        <div id="menu" class="fas fa-bars"></div>
+        <nav class="navbar">
+            <ul>
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#skills">Skills</a></li>
+            <li><a href="/#education">Education</a></li>
+            <li><a class="active" href="/#work">Work</a></li>
+            <li><a href="/#experience">Experience</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+</header>
+<!-- navbar ends -->
+
+<!-- work project section starts -->
+<section class="work" id="work">
+
+  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
+  
+  <div id="filters" class="button-group">
+    <button class="btn is-checked" data-filter="*">All Projects</button>
+    <button class="btn" data-filter=".mern">MERN Stack</button>
+    <button class="btn" data-filter=".lamp">LAMP Stack</button>
+    <button class="btn" data-filter=".basicweb">Basic Web</button>
+    <button class="btn" data-filter=".android">Android App</button>
+  </div>
+
+  <div class="box-container">
+
+    <!-- <div class="box tilt">
+      <img src="/assets/images/projects/agecalc.PNG" alt="" />
+      <div class="content">
+        <div class="tag">
+        <h3>Portfolio Website</h3>
+        </div>
+        <div class="desc">
+          <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
+          <div class="btns">
+            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            <a href="#" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+          </div>
+        </div>
+      </div>
+    </div> -->   
+
+  </div>
+
+  <div class="backbtn">
+    <a href="/#work" class="btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Home</span>
+  </a>
+  </div>
+
+</section>
+<!-- work project section ends -->
+
+<!-- scroll top btn -->
+<a href="#work" class="fas fa-angle-up" id="scroll-top"></a>
+<!-- scroll back to top -->
+
+
+<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
+<!-- jquery cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- vanilla tilt.js links -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- scroll reveal anim -->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- isotope filter plugin cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
+
+<script>
+    $(document).ready(function () {
+
+$('#menu').click(function () {
+    $(this).toggleClass('fa-times');
+    $('.navbar').toggleClass('nav-toggle');
+});
+
+$(window).on('scroll load', function () {
+    $('#menu').removeClass('fa-times');
+    $('.navbar').removeClass('nav-toggle');
+
+    if (window.scrollY > 60) {
+        document.querySelector('#scroll-top').classList.add('active');
+    } else {
+        document.querySelector('#scroll-top').classList.remove('active');
+    }
+});
+});
+
+document.addEventListener('visibilitychange',
+function () {
+    if (document.visibilityState === "visible") {
+        document.title = "Projects | Portfolio Jigar Sable";
+        $("#favicon").attr("href", "/assets/images/favicon.png");
+    }
+    else {
+        document.title = "Come Back To Portfolio";
+        $("#favicon").attr("href", "/assets/images/favhand.png");
+    }
+});
+
+
+// fetch projects start
+function getProjects() {
+return fetch("projects.json")
+    .then(response => response.json())
+    .then(data => {
+        return data
+    });
+}
+
+
+function showProjects(projects) {
+let projectsContainer = document.querySelector(".work .box-container");
+let projectsHTML = "";
+projects.forEach(project => {
+    projectsHTML += `
+    <div class="grid-item ${project.category}">
+    <div class="box tilt" style="width: 380px; margin: 1rem">
+  <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+  <div class="content">
+    <div class="tag">
+    <h3>${project.name}</h3>
+    </div>
+    <div class="desc">
+      <p>${project.desc}</p>
+      <div class="btns">
+        <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+        <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>`
+});
+projectsContainer.innerHTML = projectsHTML;
+
+// vanilla tilt.js
+// VanillaTilt.init(document.querySelectorAll(".tilt"), {
+//     max: 20,
+// });
+// // vanilla tilt.js  
+
+// /* ===== SCROLL REVEAL ANIMATION ===== */
+// const srtop = ScrollReveal({
+//     origin: 'bottom',
+//     distance: '80px',
+//     duration: 1000,
+//     reset: true
+// });
+
+// /* SCROLL PROJECTS */
+// srtop.reveal('.work .box', { interval: 200 });
+
+// isotope filter products
+var $grid = $('.box-container').isotope({
+    itemSelector: '.grid-item',
+    layoutMode: 'fitRows',
+    masonry: {
+        columnWidth: 200
+    }
+});
+
+// filter items on button click
+$('.button-group').on('click', 'button', function () {
+    $('.button-group').find('.is-checked').removeClass('is-checked');
+    $(this).addClass('is-checked');
+    var filterValue = $(this).attr('data-filter');
+    $grid.isotope({ filter: filterValue });
+});
+}
+
+getProjects().then(data => {
+showProjects(data);
+})
+// fetch projects end
+
+// Start of Tawk.to Live Chat
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+(function () {
+var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+s1.async = true;
+s1.src = 'https://embed.tawk.to/60df10bf7f4b000ac03ab6a8/1f9jlirg6';
+s1.charset = 'UTF-8';
+s1.setAttribute('crossorigin', '*');
+s0.parentNode.insertBefore(s1, s0);
+})();
+// End of Tawk.to Live Chat
+
+// disable developer mode
+document.onkeydown = function (e) {
+if (e.keyCode == 123) {
+    return false;
+}
+if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    return false;
+}
+if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+    return false;
+}
+if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    return false;
+}
+if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    return false;
+}
+}
+</script>
+<script>
+    [
+  {
+    "name": "NotyStack Android",
+    "desc": "Fully fledged android CRUD app based on different design patterns. Built using Java, XML, SQLite, Firebase, RoomDB, MVVM.",
+    "image": "notystackandroid",
+    "category": "android",
+    "links": {
+      "view": "https://www.linkedin.com/posts/jigar-sable_androiddev-androidstudio-java-activity-6955224473822199808-JT0j",
+      "code": "https://github.com/jigar-sable/notystack-android"
+    }
+  },
+  {
+    "name": "SPPU Engg Prep",
+    "desc": "All in one SPPU Engineering resources. Built using Java, XML and Firebase.",
+    "image": "sppuprepandroid",
+    "category": "android",
+    "links": {
+      "view": "https://www.linkedin.com/posts/jigar-sable_androiddev-androidstudio-java-activity-6955224473822199808-JT0j",
+      "code": "https://github.com/jigar-sable/sppu-prep-android"
+    }
+  },
+  {
+    "name": "NewsBox Android",
+    "desc": "Native android app built using Java, XML. Retrofit & Glide dependencies. Provides different category news.",
+    "image": "newsboxandroid",
+    "category": "android",
+    "links": {
+      "view": "https://www.linkedin.com/posts/jigar-sable_androiddev-androidstudio-java-activity-6955224473822199808-JT0j",
+      "code": "https://github.com/jigar-sable/newsbox-android"
+    }
+  },
+  {
+    "name": "Weatherly Android",
+    "desc": "Native android app built using Java, XML and Volley dependencies. Provides weather forecast.",
+    "image": "weatherlyandroid",
+    "category": "android",
+    "links": {
+      "view": "https://www.linkedin.com/posts/jigar-sable_androiddev-androidstudio-java-activity-6955224473822199808-JT0j",
+      "code": "https://github.com/jigar-sable/weatherly-android"
+    }
+  },
+  {
+    "name": "Instagram MERN",
+    "desc": "Full-Stack Instagram clone built using MERN stack and realtime chat with the help of socket.iO",
+    "image": "instagrammern",
+    "category": "mern",
+    "links": {
+      "view": "https://instagramernstack.herokuapp.com/",
+      "code": "https://github.com/jigar-sable/instagram-mern"
+    }
+  },
+  {
+    "name": "Flipkart MERN",
+    "desc": "Full-Stack Flipkart with Admin Dashboard and Paytm Payment Gateway. MERN Stack WebApp, ready to use for business.",
+    "image": "flipkartmern",
+    "category": "mern",
+    "links": {
+      "view": "https://flipkartwebs.herokuapp.com/",
+      "code": "https://github.com/jigar-sable/flipkart-mern"
+    }
+  },
+  {
+    "name": "ResumeGen",
+    "desc": "ReactJS Basic Resume Generator which will generate customized resume in few minutes on your requirements.",
+    "image": "resumegen",
+    "category": "mern",
+    "links": {
+      "view": "https://resumegenx.netlify.app/",
+      "code": "https://github.com/jigar-sable/resumegen"
+    }
+  },
+  {
+    "name": "React-Projects",
+    "desc": "Full-Stack project dashboard which is collection of projects built on the React library.",
+    "image": "reactprojects",
+    "category": "mern",
+    "links": {
+      "view": "https://reactjsprojects.herokuapp.com/",
+      "code": "https://github.com/jigar-sable/React-Projects"
+    }
+  },
+  {
+    "name": "Flipkart PHP",
+    "desc": "Full-Stack Flipkart Clone Using LAMP Stack. With all major features and OTP authentication and Cashfree payment gateway.",
+    "image": "flipkartphp",
+    "category": "lamp",
+    "links": {
+      "view": "https://github.com/jigar-sable/Flipkart-Clone-PHP",
+      "code": "https://github.com/jigar-sable/Flipkart-Clone-PHP"
+    }
+  },
+  {
+    "name": "JavaScript Projects Website",
+    "desc": "This website is specially build to showcase all major javaScript projects. All my javaScript based projects are in it.",
+    "image": "jspro",
+    "category": "basicweb",
+    "links": {
+      "view": "https://jigar-sable.github.io/JavaScript-Projects",
+      "code": "https://github.com/jigar-sable/JavaScript-Projects"
+    }
+  },
+  {
+    "name": "Web UI Clones",
+    "desc": "Flipkart, YouTube, Instagram, Sololearn web UI clones using tailwindCSS.",
+    "image": "webuiclones",
+    "category": "mern",
+    "links": {
+      "view": "https://github.com/jigar-sable/web-ui-clones",
+      "code": "https://github.com/jigar-sable/web-ui-clones"
+    }
+  },
+  {
+    "name": "Crypto Tracker",
+    "desc": "Crypto Tracker built using ReactJS and Chakra UI. Supports dark mode. API used coingecko.",
+    "image": "cryptotracker",
+    "category": "mern",
+    "links": {
+      "view": "https://crypto-tracker-react-project.netlify.app/",
+      "code": "https://github.com/jigar-sable/React-Projects/tree/main/crypto-tracker"
+    }
+  },
+  {
+    "name": "Hulu Website",
+    "desc": "Hulu website built using NextJS and tailwindCSS. API used TMDB, deployed on vercel.",
+    "image": "hulu",
+    "category": "mern",
+    "links": {
+      "view": "https://hulu-clone-jigar-sable.vercel.app/",
+      "code": "https://github.com/jigar-sable/React-Projects/tree/main/hulu-clone"
+    }
+  },
+  {
+    "name": "Portfolio Website",
+    "desc": "Personal Portfolio Website. Don't Need Much Info About It, Just Scroll Down. You're Here Only!",
+    "image": "portfolio1",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "https://github.com/jigar-sable/Portfolio-Website"
+    }
+  },
+  {
+    "name": "Composey Website",
+    "desc": "Simple landing page website built using HTML, CSS, JavaScript and some JavaScript Libraries.",
+    "image": "composey",
+    "category": "basicweb",
+    "links": {
+      "view": "https://composey.netlify.app/",
+      "code": "https://github.com/jigar-sable/LGMVIP-WebDev"
+    }
+  },
+  {
+    "name": "Webview App",
+    "desc": "It's an android app which uses web view component for displaying content. This app provides many different features.",
+    "image": "webviewapp",
+    "category": "android",
+    "links": {
+      "view": "https://github.com/jigar-sable/Android-Webview#webapp--android-webview-app",
+      "code": "https://github.com/jigar-sable/Android-Webview"
+    }
+  },
+  {
+    "name": "PHP Banking Website",
+    "desc": "Basic Banking System based on PHP and MySQL database. Made with HTML, CSS, JavaScript and backend with PHP.",
+    "image": "tsfbank",
+    "category": "lamp",
+    "links": {
+      "view": "https://tsfbank.rf.gd",
+      "code": "https://github.com/jigar-sable/TSF-Bank"
+    }
+  },
+  {
+    "name": "Bootstrap Portfolio",
+    "desc": "Portfolio built using HTML, CSS, Bootstrap, SASS and JavaScript. Customized Bootstrap using SCSS.",
+    "image": "bootstrapportfolio",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Bootstrap Template",
+    "desc": "Basic website template built using HTML and Bootstrap.",
+    "image": "bootstraptemplate",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Foodicious",
+    "desc": "Basic food website landing page built using HTML, CSS and JavaScript.",
+    "image": "foodicious",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Food Website",
+    "desc": "Basic food website landing page built using HTML, CSS, SASS, Bootstrap and jQuery.",
+    "image": "foodwebsite",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "WebChat Website",
+    "desc": "It's a web based chat app made using popular javaScript library Socket IO. Allows multiple users to connect.",
+    "image": "webchat",
+    "category": "mern",
+    "links": {
+      "view": "https://github.com/jigar-sable/WebChat#webchat",
+      "code": "https://github.com/jigar-sable/WebChat"
+    }
+  },
+  {
+    "name": "Basic Banking App",
+    "desc": "It's an android app which uses SQLite to store user accounts data. It provides feature to simply transact amount.",
+    "image": "basicbank",
+    "category": "android",
+    "links": {
+      "view": "https://github.com/jigar-sable/Basic_Banking_App#basic-banking-app",
+      "code": "https://github.com/jigar-sable/Basic_Banking_App"
+    }
+  },
+  {
+    "name": "JavaScript Issue Tracker",
+    "desc": "It provides the feature to Assign Issue With The Auto Generated Id By Using ChanceJS. Uses Local Storage.",
+    "image": "issuetrack",
+    "category": "basicweb",
+    "links": {
+      "view": "https://jigar-sable.github.io/JavaScript-Projects/projects/issuetracker",
+      "code": "https://github.com/jigar-sable/JavaScript-Projects/tree/main/projects/issuetracker"
+    }
+  },
+  {
+    "name": "PHP PBL Portal",
+    "desc": "A simple portal in which students can submit their PBL projects and faculties can view by access admin panel.",
+    "image": "phppblform",
+    "category": "lamp",
+    "links": {
+      "view": "https://github.com/jigar-sable/PHP-Projects/tree/main/pblform#pbl-portal",
+      "code": "https://github.com/jigar-sable/PHP-Projects/tree/main/pblform"
+    }
+  },
+  {
+    "name": "Link List",
+    "desc": "All major profile links in a single website. It's just like clone of link tree. Personalized and Responsive.",
+    "image": "linklist",
+    "category": "basicweb",
+    "links": {
+      "view": "https://jigar-sable.github.io/LinkList",
+      "code": "https://github.com/jigar-sable/LinkList"
+    }
+  },
+  {
+    "name": "Job Finder Dummy",
+    "desc": "It Fetch JSON Data And Allow Feature To Search Within The Content Displayed. Will be Developed By Using Live APIs.",
+    "image": "saas",
+    "category": "basicweb",
+    "links": {
+      "view": "https://jigar-sable.github.io/JavaScript-Projects/api-projects/saas-jobs",
+      "code": "https://github.com/jigar-sable/JavaScript-Projects/tree/main/api-projects/saas-jobs"
+    }
+  },
+  {
+    "name": "Old Websites",
+    "desc": "Bestwebs & ColorCoder. Two Years old websites memories. Simple with basic features.",
+    "image": "oldsites",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Resistor Color Codes",
+    "desc": "Simply provides the color codes of resistors. Calculation information and about resistors.",
+    "image": "resistercolor",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "KIA Info Website",
+    "desc": "Basic KIA webpage displays the info about seltos product range. Specs and Image Gallery.",
+    "image": "kiaweb",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Burger Shop Dummy",
+    "desc": "Basic burger shop webpage allow users to check menu and price. Dummy Order Form.",
+    "image": "burgerweb",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Indian Temples",
+    "desc": "It shows temples of different sectors of India. as user clicks it will redirect to wiki of that temple for info.",
+    "image": "templeweb",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Indian Temples",
+    "desc": "It shows temples of different sectors of India. as user clicks it will redirect to wiki of that temple for info.",
+    "image": "templeweb",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Indian Temples",
+    "desc": "It shows temples of different sectors of India. as user clicks it will redirect to wiki of that temple for info.",
+    "image": "templeweb",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  }
+]
+</script>
+
+</body>
+</html>

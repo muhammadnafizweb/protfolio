@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link id='favicon' rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-png">
+
+    <title>Experience | Portfolio Jigar Sable</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none; border: none;
+  text-transform:capitalize;
+  transition: all .2s linear;
+}
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body{
+  background: #f7f7f7;
+  font-family: 'Poppins', sans-serif;
+}
+
+*::selection{
+  background: #2b3dda;
+  color: #fff;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar{
+  width: .8rem;
+}
+html::-webkit-scrollbar-track{
+  background: rgb(235, 202, 245);
+}
+html::-webkit-scrollbar-thumb{
+  background: #420177;
+}
+
+/* navbar starts */
+header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.7rem 10%;
+  height: 6.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146,161,176,.3);
+}
+section{
+  min-height: 100vh;
+  padding: 2rem 9%;
+}
+.heading{
+  font-size: 3.5rem;
+  color: rgb(20, 20, 20);
+  font-weight: 800;
+  text-align: center;
+}
+.heading span{
+  color: rgb(115, 3, 167);
+}
+header .logo{
+  font-size: 1.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #0E2431;
+}
+header .logo i {
+  font-size: 2.2rem;
+}
+header .logo:hover {
+  color: #fc8c05;
+}
+header .navbar ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .navbar li{
+  margin-left: 2.5rem;
+}
+header .navbar ul li a{
+  font-size: 1.57rem;
+  color: #0E2431;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.04rem;
+}
+header .navbar ul li a.active,
+header .navbar ul li a:hover{
+  color: #011aff;
+  border-bottom: .2rem solid #011aff;
+  padding: .5rem 0;
+}
+/* navbar ends */
+
+/* hamburger icon starts*/
+#menu{
+  font-size: 3rem;
+  cursor: pointer;
+  color: rgb(24, 2, 63);
+  display: none;
+}
+@media(max-width:768px){
+  #menu{
+      display: block;
+  }
+  header .navbar{
+    position: fixed;
+    top: 6.5rem; right: -120%;
+    width: 75%;
+    height: 100%;
+    text-align: left;
+    align-items: flex-start;
+    background-color: #0e0f31;
+  }
+  header .navbar ul{
+    flex-flow: column;
+    padding: 1rem;
+  }
+  header .navbar ul li{
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: .5rem;
+    width: 26rem;
+  }
+  header .navbar ul li a{
+    display: block;
+    padding: 1rem;
+    text-align: left;
+    color: #fff;
+    font-size: 2rem;
+  }
+  header .navbar ul li a.active,
+  header .navbar ul li a:hover{
+    padding: 1rem;
+    color: #fff;
+    border-radius: .5rem;
+    border-bottom: .5rem solid #011aff;
+  }
+  .fa-times{
+    transform: rotate(180deg);
+  }
+  header .navbar.nav-toggle{
+    right: 0;
+  }
+}
+/* hamburger icon ends */
+
+/* experience section starts */
+.experience {
+  margin-top: 5rem;
+}
+.experience .quote {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.experience .timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+.experience .timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background: #020133;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -2;
+}
+.experience .container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+/*circles on timeline*/
+.experience .container::after {    
+  content: "\f0b1";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: rgb(255, 255, 255);
+  border: 4px solid #f68c09;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 100;
+  font-size: 1.89rem;
+  text-align: center;
+  font-weight: 600;
+  color:#02094b;
+  font-family: 'Font Awesome\ 5 Free';
+}
+.experience .left {
+  left: 0;
+}
+.experience .right {
+  left: 50%;
+}
+/* arrows pointing right */
+.experience .left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #f68c09;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #f68c09;
+}
+/* arrows pointing left  */
+.experience .right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #f68c09;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #f68c09 transparent transparent;
+}
+.experience .right::after {
+  left: -16px;
+}
+.experience .content {
+  background-color: #f68c09;
+  position: relative;
+  border-radius: 6px;
+}
+.experience .content .tag{
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+}
+.experience .content .desc{
+  margin-left: 1.5rem;
+  padding-bottom: 1rem;
+}
+.experience .content .desc h3{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.experience .content .desc p{
+  font-size: 1.2rem;
+}
+/* view all button */
+.morebtn{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.morebtn .btn {
+  position: relative;
+  line-height: 0;
+  padding: 1.6rem 3rem;
+  border-radius: .5em;
+  transition: 0.5s;
+  color: #fff;
+  background: #2506ad;
+  box-shadow: 0px 5px 10px rgba(48, 68, 247, .6);
+  text-align: center;
+}
+.morebtn .btn span {
+  font-weight: 600;
+  font-size: 1.7rem;
+  font-family: 'Nunito', sans-serif;
+}
+.morebtn .btn i {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+.morebtn .btn:hover{
+  background: #1a047e;
+}
+.morebtn .btn:hover i {
+  transform: translateX(-8px);
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  .experience .timeline::after {
+  left: 31px;
+  }
+  .experience .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  .experience .container::before {
+  left: 60px;
+  border: medium solid #f68c09;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #f68c09 transparent transparent;
+  }
+  .experience .left::after {
+    left: 15px;
+  }
+  .experience .right::after {
+    left: 15px;
+  }
+  .experience .right {
+  left: 0%;
+  }
+  .experience .container::after {
+    font-size: 2.2rem;;
+  }
+}
+/* experience media queries ends */
+/* experience section ends */
+
+
+/* footer section starts */
+.footer{
+  min-height: auto;
+  padding-top: 0;
+  background: rgb(0, 1, 43);
+}
+.footer .box-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer .box-container .box{
+  flex: 1 1 25rem;
+  margin: 2rem;
+}
+.footer .box-container .box h3{
+  font-size: 2.5rem;
+  color: #fff;
+  padding-bottom: 1rem;
+  font-weight: normal;
+}
+.footer .box-container .box p{
+  font-size: 1.5rem;
+  color: #ccc;
+  padding: .7rem 0;
+  text-transform: none;
+}
+.footer .box-container .box p i{
+  padding-right: 1rem;
+  color: #ffae00;
+}
+.footer .box-container .box a{
+  font-size: 1.5rem;
+  color: rgb(238, 238, 238);
+  padding: .3rem 0;
+  display: block;
+}
+.footer .box-container .box a:hover{
+  color: #ffae00;
+}
+.footer .box-container .box .share{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+.footer .box-container .box .share a{
+  height: 4rem;
+  width: 4rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5rem;
+  font-size: 1.7rem;
+  margin-right: 1rem;
+  transition: .2s;
+  background: rgb(230, 230, 230);
+  color: #02094b;
+  border: none;
+}
+.footer .box-container .box .share a:hover{
+  background: transparent;
+  transform: scale(0.98);
+  border: .1rem solid rgb(180, 178, 178);
+  color: #ffae00;
+}
+.footer .credit{
+  padding: 1rem 0 0 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: 'Nunito',sans-serif;
+  font-weight: 600;
+  color: #fff;
+  border-top: .1rem solid #fff3;
+}
+.footer .credit a{
+  color: #ffae00;
+}
+.footer .fa{
+    color: #E90606;
+    margin: 0 .3rem;
+    font-size: 1.5rem;
+    animation: pound .35s infinite alternate;
+}
+@-webkit-keyframes pound{
+  to{
+    transform: scale(1.1);
+  }
+}
+@keyframes pound{
+  to{
+    transform: scale(1.1);
+}
+}
+@media(max-width:450px){
+  .footer .box-container .box{
+    margin: 2rem;
+  }
+  .footer .box-container .box p{
+    padding: 0.7rem;
+  }
+  .footer .box-container .box .share a{
+    padding: 1.1rem;
+  }
+}
+/* footer section ends */
+
+/* common media queries starts*/
+@media(max-width:450px){
+  html{
+    font-size: 55%;
+  }
+  body{
+    padding-right: 0;
+  }
+  section{
+    padding: 2rem;
+  }
+}
+/* common media queries ends*/
+
+
+/* scroll top starts */
+#scroll-top{
+  position: fixed;
+  top: -140%;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  background: #ffae00;
+  color: rgb(13, 0, 44);
+  border-radius: 5rem;
+  transition: 1s linear;
+  z-index: 1000;
+}
+#scroll-top.active{
+  top: calc(100% - 12rem);
+}
+/* scroll top ends */
+    </style>
+</head>
+<body oncontextmenu="return false">
+
+<!-- navbar starts -->
+<header>
+        <a href="/" class="logo"><i class="fab fa-node-js"></i> Jigar</a>
+
+        <div id="menu" class="fas fa-bars"></div>
+        <nav class="navbar">
+            <ul>
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#skills">Skills</a></li>
+            <li><a href="/#education">Education</a></li>
+            <li><a href="/#work">Work</a></li>
+            <li><a class="active" href="/#experience">Experience</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+</header>
+<!-- navbar ends -->
+
+<!-- experience section starts -->
+<section class="experience" id="experience">
+
+  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience</h2>
+  <div class="quote">
+      <span>every experience in your life is being orchestrated to teach you something you need to know to move forward.</span>
+  </div>
+
+  <div class="timeline">
+
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>Self Employed</h2>
+        </div>
+        <div class="desc">
+            <h3>Full Stack Developer</h3>
+            <p>Oct 2021 - present</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+          <div class="tag">
+            <h2>DevIncept (Top Contributor)</h2>
+          </div>
+          <div class="desc">
+              <h3>DCP 2021 Contributor | Open Source Program</h3>
+              <p>July 2021 - October 2021</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container left">
+        <div class="content">
+          <div class="tag">
+            <h2>LetsGrowMore Summer of Code</h2>
+          </div>
+          <div class="desc">
+              <h3>LGM-SOC'21 Participant | Open Source Program</h3>
+              <p>June 2021 - August 2021</p>
+          </div>
+        </div>
+      </div>
+
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>Mapstreak Flyseas</h2>
+        </div>
+        <div class="desc">
+            <h3>Web Developer | Internship</h3>
+            <p>June 2021 - Dec 2021</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>The Spark Foundation</h2>
+        </div>
+        <div class="desc">
+            <h3>Website Developer | Internship</h3>
+            <p>May 2021 - June 2021</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>The Spark Foundation</h2>
+        </div>
+        <div class="desc">
+            <h3>Mobile Application Developer | Internship</h3>
+            <p>April 2021 - May 2021</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>Frshr Technologies</h2>
+        </div>
+        <div class="desc">
+            <h3>Wordpress Developer | Internship</h3>
+            <p>April 2021 - April 2021</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>WonderingBlog</h2>
+        </div>
+        <div class="desc">
+            <h3>Web Development & SEO | Internship</h3>
+            <p>March 2021 - April 2021</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+          <div class="tag">
+            <h2>Hacktoberfest 2020</h2>
+          </div>
+          <div class="desc">
+              <h3>Contributor | Open Source Program</h3>
+              <p>October 2020 - November 2020</p>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="morebtn">
+    <a href="/#experience" class="btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Home</span>
+  </a>
+  </div>
+
+</div>
+</section>
+<!-- experience section ends -->
+
+<!-- footer section starts -->
+<section class="footer">
+
+  <div class="box-container">
+
+      <div class="box">
+          <h3>Jigar's Portfolio</h3>
+          <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br/> <br/> Keep Rising 🚀. Connect with me over live chat!</p>
+      </div>
+
+      <div class="box">
+          <h3>quick links</h3>
+          <a href="/#home"><i class="fas fa-chevron-circle-right"></i> home</a>
+          <a href="/#about"><i class="fas fa-chevron-circle-right"></i> about</a>
+          <a href="/#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
+          <a href="/#education"><i class="fas fa-chevron-circle-right"></i> education</a>
+          <a href="/#work"><i class="fas fa-chevron-circle-right"></i> work</a>
+          <a href="/#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
+      </div>
+
+      <div class="box">
+          <h3>contact info</h3>
+          <p> <i class="fas fa-phone"></i>+91 704-302-4736</p>
+          <p> <i class="fas fa-envelope"></i>jigarsable21@gmail.com</p>
+          <p> <i class="fas fa-map-marked-alt"></i>Pune, India-412206</p>
+          <div class="share">
+
+            <a href="https://www.linkedin.com/in/jigar-sable" class="fab fa-linkedin" target="_blank"></a>
+            <a href="https://github.com/jigar-sable" class="fab fa-github" target="_blank"></a>
+            <a href="mailto:jigarsable21@gmail.com" class="fas fa-envelope" target="_blank"></a>
+            <a href="https://twitter.com/jigar_sable" class="fab fa-twitter" target="_blank"></a>
+            <a href="https://t.me/lifecode5" class="fab fa-telegram-plane" target="_blank"></a>
+          </div>
+      </div>
+  </div>
+
+  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/jigar-sable"> jigar sable</a></h1>
+
+</section>
+<!-- footer section ends -->
+
+<!-- scroll top btn -->
+<a href="#experience" class="fas fa-angle-up" id="scroll-top"></a>
+<!-- scroll back to top -->
+
+
+<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
+<!-- jquery cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- scroll reveal anim -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
+
+<script>
+    $(document).ready(function(){
+
+$('#menu').click(function(){
+    $(this).toggleClass('fa-times');
+    $('.navbar').toggleClass('nav-toggle');
+});
+
+$(window).on('scroll load',function(){
+    $('#menu').removeClass('fa-times');
+    $('.navbar').removeClass('nav-toggle');
+
+    if(window.scrollY>60){
+        document.querySelector('#scroll-top').classList.add('active');
+    }else{
+        document.querySelector('#scroll-top').classList.remove('active');
+    }
+});
+});
+
+/* ===== SCROLL REVEAL ANIMATION ===== */
+const srtop = ScrollReveal({
+origin: 'top',
+distance: '80px',
+duration: 1000,
+reset: true
+});
+
+/* SCROLL EXPERIENCE */
+srtop.reveal('.experience .timeline',{delay: 400});
+srtop.reveal('.experience .timeline .container',{interval: 400}); 
+
+
+// Start of Tawk.to Live Chat
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/60df10bf7f4b000ac03ab6a8/1f9jlirg6';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+// End of Tawk.to Live Chat
+
+
+// disable developer mode
+document.onkeydown = function(e) {
+if(e.keyCode == 123) {
+ return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+ return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+ return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+ return false;
+}
+if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+ return false;
+}
+}
+
+document.addEventListener('visibilitychange',
+function(){
+if(document.visibilityState === "visible"){
+    document.title = "Experience | Portfolio Jigar Sable";
+    $("#favicon").attr("href","/assets/images/favicon.png");
+}
+else {
+    document.title = "Come Back To Portfolio";
+    $("#favicon").attr("href","/assets/images/favhand.png");
+}
+});
+</script>
+
+</body>
+</html>
